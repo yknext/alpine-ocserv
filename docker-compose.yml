@@ -1,5 +1,5 @@
 Ocserv:
-  image: alpine_ocserv
+  build: .
   privileged: true
   restart: always
   ports:
