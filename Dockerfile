@@ -29,7 +29,7 @@ RUN buildDeps="xz openssl gcc autoconf make linux-headers"; \
 	&& rm -fr ./$OC_FILE \
 	&& apk del --purge $buildDeps
 
-COPY cn-no-route.txt /tmp/
+COPY route-except-private.txt /tmp/route-rule.txt
 RUN set -x \
 	&& sed -i 's/\.\/sample\.passwd/\/etc\/ocserv\/ocpasswd/' /etc/ocserv/ocserv.conf \
 	&& sed -i 's/\(max-same-clients = \)2/\110/' /etc/ocserv/ocserv.conf \
@@ -39,8 +39,8 @@ RUN set -x \
 	&& sed -i 's/192.168.1.2/8.8.8.8/' /etc/ocserv/ocserv.conf \
 	&& sed -i 's/^route/#route/' /etc/ocserv/ocserv.conf \
 	&& sed -i 's/^no-route/#no-route/' /etc/ocserv/ocserv.conf \
-	&& cat /tmp/cn-no-route.txt >> /etc/ocserv/ocserv.conf \
-	&& rm -fr /tmp/cn-no-route.txt
+	&& cat /tmp/route-rule.txt >> /etc/ocserv/ocserv.conf \
+	&& rm -fr /tmp/route-rule.txt
 
 WORKDIR /etc/ocserv
 
