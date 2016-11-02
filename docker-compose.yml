@@ -6,6 +6,7 @@ services:
     restart: always
     ports:
     - 60443:443
+    - 60443:443/udp
     volumes:
     - ./cert/server-cert.pem:/etc/ocserv/server-cert.pem
     - ./cert/server-key.pem:/etc/ocserv/server-key.pem
