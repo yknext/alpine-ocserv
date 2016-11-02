@@ -1,10 +1,12 @@
-Ocserv:
-  build: .
-  privileged: true
-  restart: always
-  ports:
-  - 60443:443
-  volumes:
-  - ./cert:/etc/ocserv/
-  environment:
-  - NO_TEST_USER=1
+version: '2'
+services:
+  ocserv:
+    build: .
+    privileged: true
+    restart: always
+    ports:
+    - 60443:443
+    volumes:
+    - ./cert:/etc/ocserv/
+    environment:
+    - NO_TEST_USER=1
