@@ -6,6 +6,7 @@ services:
     privileged: true
     restart: always
     volumes:
+    - ./work:/etc/ocserv/certs/work
     - /etc/letsencrypt/live/[DOMAIN]/cert.pem:/etc/ocserv/certs/server-cert.pem:ro
     - /etc/letsencrypt/live/[DOMAIN]/privkey.pem:/etc/ocserv/certs/server-key.pem:ro
     ports:
