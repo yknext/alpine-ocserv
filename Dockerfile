@@ -37,6 +37,7 @@ RUN set -x \
 	&& sed -i 's/192.168.1.2/8.8.8.8/' /etc/ocserv/ocserv.conf \
 	&& sed -i 's/^route/#route/' /etc/ocserv/ocserv.conf \
 	&& sed -i 's/^no-route/#no-route/' /etc/ocserv/ocserv.conf \
+	&& sed -i 's/try-mtu-discovery\ \=\ false/try-mtu-discovery\ \=\ true/' /etc/ocserv/ocserv.conf \
 	&& cat /tmp/route-rule.txt >> /etc/ocserv/ocserv.conf \
 	&& rm -fr /tmp/route-rule.txt
 
