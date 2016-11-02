@@ -7,7 +7,7 @@ services:
     restart: always
     volumes:
     - /etc/localtime:/etc/localtime:ro
-    - ./work:/etc/ocserv/certs/work
+    - ./certs:/etc/ocserv/certs
     - /etc/letsencrypt/live/[DOMAIN]/cert.pem:/etc/ocserv/certs/server-cert.pem:ro
     - /etc/letsencrypt/live/[DOMAIN]/privkey.pem:/etc/ocserv/certs/server-key.pem:ro
     ports:
