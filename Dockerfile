@@ -41,6 +41,9 @@ RUN set -x \
 	&& sed -i 's/dns\ \=\ 8.8.8.8/dns\ \=\ 223.6.6.6/' /etc/ocserv/ocserv.conf \
 	&& sed -i 's/plain\[passwd\=\/etc\/ocserv\/ocpasswd\]/certificate/' /etc/ocserv/ocserv.conf \
 	&& echo 'dns = 223.5.5.5' >> /etc/ocserv/ocserv.conf \
+	&& sed -i 's/default-domain/#default-domaim/' /etc/ocserv/ocserv.conf \
+	&& sed -i 's/cert-user-oid/#cert-user-oid/' /etc/ocserv/ocserv.conf \
+	&& echo 'cert-user-oid = 2.5.4.3' >> /etc/ocserv/ocserv.conf \
 	&& cat /tmp/route-rule.txt >> /etc/ocserv/ocserv.conf \
 	&& rm -fr /tmp/route-rule.txt
 
