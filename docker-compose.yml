@@ -7,6 +7,7 @@ services:
     ports:
     - 60443:443
     volumes:
-    - ./cert:/etc/ocserv/
+    - ./cert/server-cert.pem:/etc/ocserv/server-cert.pem
+    - ./cert/server-key.pem:/etc/ocserv/server-key.pem
     environment:
     - NO_TEST_USER=1
