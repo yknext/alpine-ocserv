@@ -2,7 +2,7 @@
 
 if [ ! -f /etc/ocserv/certs/ca.pem ]; then
         #mkdir /etc/ocserv/certs
-	cp /bin/ocm /etc/ocserv/certs/
+	#cp /bin/ocm /etc/ocserv/certs/
 	# Check environment variables
 	if [ -z "$CA_CN" ]; then
 		CA_CN="VPN CA"
