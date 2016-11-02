@@ -1,0 +1,10 @@
+Ocserv:
+  image: alpine_ocserv
+  privileged: true
+  restart: always
+  ports:
+  - 60443:443
+  volumes:
+  - ./cert:/etc/ocserv/
+  environment:
+  - NO_TEST_USER=1
