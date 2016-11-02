@@ -1,6 +1,6 @@
 version: '2'
 services:
-  ocserv:
+  alpine_ocserv:
     build: .
     privileged: true
     restart: always
