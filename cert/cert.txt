@@ -1,4 +1,0 @@
-put this file on it
-
-server-key.pem
-server-cert.pem
