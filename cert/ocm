@@ -52,6 +52,7 @@ _EOF_
 
     # Export User Certificate
     certtool --to-p12 --pkcs-cipher 3des-pkcs12 --load-privkey $USER_KEY --load-certificate $USER_CERT --outfile $USER_P12 --outder
+    cp $USER_P12 $WORK
 }
 
 revoke() {
