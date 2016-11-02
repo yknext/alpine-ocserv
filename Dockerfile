@@ -4,7 +4,7 @@ USER root
 
 RUN echo "@edge http://dl-4.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories
 RUN echo "@testing http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
-RUN apk update && apk add musl-dev iptables gnutls-dev readline-dev libnl3-dev lz4-dev libseccomp libseccomp-dev
+RUN apk update && apk add iptables gnutls-dev readline-dev libnl3-dev lz4-dev libseccomp libseccomp-dev
 RUN apk add libev libev-dev gnutls-utils
 
 RUN buildDeps="xz openssl gcc autoconf make linux-headers"; \
