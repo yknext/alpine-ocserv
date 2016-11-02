@@ -49,7 +49,7 @@ RUN set -x \
 
 WORKDIR /etc/ocserv
 
-COPY cert/ocm /bin
+COPY ocm /bin
 RUN chmod +x /bin/ocm
 COPY docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
