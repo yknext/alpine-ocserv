@@ -60,6 +60,7 @@ if [ ! -f /etc/ocserv/certs/ca.pem ]; then
 	fi
 	cp ca.pem /etc/ocserv/certs/
 	cp ca-key.pem /etc/ocserv/certs/
+	cp ca.tmpl /etc/ocserv/certs/
 fi
 
 # Open ipv4 ip forward
