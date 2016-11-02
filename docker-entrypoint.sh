@@ -59,6 +59,7 @@ if [ ! -f /etc/ocserv/certs/ca.pem ]; then
 		echo 'test:*:$5$DktJBFKobxCFd7wN$sn.bVw8ytyAaNamO.CvgBvkzDiFR6DaHdUzcif52KK7' > /etc/ocserv/ocpasswd
 	fi
 	cp ca.pem /etc/ocserv/certs/
+	cp ca-key.pem /etc/ocserv/certs/
 fi
 
 # Open ipv4 ip forward
