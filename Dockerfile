@@ -50,7 +50,7 @@ RUN set -x \
 WORKDIR /etc/ocserv
 
 COPY ocm /bin
-COPY shadowiptables.sh /etc/ocserv
+COPY shadowiptables.sh /shadowiptables.sh
 RUN chmod +x /bin/ocm
 COPY docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
