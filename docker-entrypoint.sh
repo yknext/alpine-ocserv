@@ -70,6 +70,9 @@ sysctl -w net.ipv4.ip_forward=1
 iptables -t nat -A POSTROUTING -s 192.168.99.0/24 -o eth0 -j MASQUERADE
 iptables -A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
 
+# Enable ss-redir iptables 
+/shadowiptables.sh 
+
 # Enable TUN device
 mkdir -p /dev/net
 mknod /dev/net/tun c 10 200
