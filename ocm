@@ -12,7 +12,7 @@ init() {
     USER_P12="./${USER}.p12"
     REVOKED_CERT="${WORK}/revoked.pem"
     CRL_TMPL="${WORK}/crl.tmpl"
-    CRL_CERT="./crl.pem"
+    CRL_CERT="/etc/ocserv/certs/crl.pem"
 
     # Ensure working directory
     [[ -d $WORK ]] || mkdir -p $WORK
