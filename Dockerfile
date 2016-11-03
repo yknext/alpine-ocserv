@@ -3,7 +3,7 @@ MAINTAINER soniclidi
 USER root
 
 RUN apk update && apk add musl musl-dev iptables gnutls-dev readline-dev libnl3-dev lz4-dev libseccomp-dev
-RUN apk add libev libev-dev gnutls-utils
+RUN apk add libev libev-dev gnutls-utils libsodium supervisor
 
 RUN buildDeps="xz openssl gcc autoconf make linux-headers"; \
 	set -x \
