@@ -50,8 +50,11 @@ RUN set -x \
 WORKDIR /etc/ocserv
 
 COPY ocm /bin
-COPY shadowiptables.sh /shadowiptables.sh
 RUN chmod +x /bin/ocm
+
+ADD https://github.com/shadowsocks/shadowsocks-libev/archive/v2.5.6.tar.gz /shadowsocks
+RUN cd /shadowsocks/ && make && ./configure && make install && rm -rf /shadowsocks
+
 COPY docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
