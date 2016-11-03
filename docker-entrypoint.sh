@@ -67,7 +67,7 @@ fi
 sysctl -w net.ipv4.ip_forward=1
 
 # Enable NAT forwarding
-iptables -t nat -A POSTROUTING -s 192.168.99.0/24 -o eth0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -s $SUB_NETWORK/24 -o eth0 -j MASQUERADE
 iptables -A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
 
 # Enable ss-redir iptables 
