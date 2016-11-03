@@ -8,10 +8,16 @@ services:
     volumes:
     - /etc/localtime:/etc/localtime:ro
     - ./certs:/etc/ocserv/certs
-    - /etc/letsencrypt/live/[DOMAIN]/cert.pem:/etc/ocserv/certs/server-cert.pem:ro
+    - /etc/letsencrypt/live/[DOMAIN]/fullchain.pem:/etc/ocserv/certs/server-cert.pem:ro
     - /etc/letsencrypt/live/[DOMAIN]/privkey.pem:/etc/ocserv/certs/server-key.pem:ro
     ports:
     - 60443:443
     - 60443:443/udp
     environment:
     - NO_TEST_USER=1
+    - CA_CN=CA
+    - CA_ORG=Corp
+    - CA_DAYS=9999
+    - SRV_CN=[DOMAIN]
+    - SRV_ORG=Company
+    - SRV_DAYS=9999
