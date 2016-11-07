@@ -57,7 +57,7 @@ COPY dnsmasq.conf /etc/dnsmasq.conf
 
 COPY supervisor.ini /etc/supervisord.d/application.ini
 
-COPY etc/shadowsocks.json /etc/shadowsocks.json
+COPY etc/shadowsocks.json /shadowsocks.json
 
 ADD https://github.com/shadowsocks/shadowsocks-libev/archive/v2.5.6.tar.gz /shadowsocks
 RUN cd /shadowsocks/ && make && ./configure && make install && rm -rf /shadowsocks
