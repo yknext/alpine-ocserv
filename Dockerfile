@@ -73,4 +73,4 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 443
 
-CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]
+CMD ["supervisord", "-c", "/etc/supervisord.conf"]
