@@ -4,9 +4,9 @@ USER root
 
 RUN apk update && apk add musl musl-dev iptables gnutls-dev readline-dev libnl3-dev lz4-dev libseccomp-dev
 RUN apk add libev libev-dev gnutls-utils libsodium supervisor
-RUN apk --no-cache add python dnsmasq g++ make pcre-dev asciidoc xmlto openssl openssl-dev
+RUN apk --no-cache add python dnsmasq openssl gcc autoconf g++ make linux-headers pcre-dev asciidoc xmlto openssl openssl-dev
 
-RUN buildDeps="xz openssl gcc autoconf make linux-headers"; \
+RUN buildDeps="xz"; \
 	set -x \
 	&& apk add $buildDeps \
 	&& cd \
