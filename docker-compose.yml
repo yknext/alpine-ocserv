@@ -22,6 +22,5 @@ services:
     - SRV_ORG=Company
     - SRV_DAYS=9999
     - VPS_SERVER_IP=
-    - SUB_NETWORK=24
+    - SUB_NETWORK=192.168.128.0
     - SS_REDIR_PORT=65500
-
