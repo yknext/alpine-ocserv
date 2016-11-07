@@ -1,5 +1,13 @@
 #!/bin/ash
 
+cp -f /shadowsocks.json /etc/shadowsocks.json
+sed -i 's/VPS_SERVER_IP/$VPS_SERVER_IP/' /etc/shadowsocks.json \
+    && sed -i 's/VPS_SERVER_IP/$VPS_SERVER_IP/' /etc/shadowsocks.json \
+    && sed -i 's/VPS_SS_PORT/$VPS_SS_PORT/' /etc/shadowsocks.json \
+    && sed -i 's/VPS_SS_PASSWORD/$VPS_SS_PASSWORD/' /etc/shadowsocks.json \
+    && sed -i 's/VPS_SS_METHOD/$VPS_SS_METHOD/' /etc/shadowsocks.json \
+    && sed -i 's/SS_REDIR_PORT/$SS_REDIR_PORT/' /etc/shadowsocks.json 
+
 if [ ! -f /etc/ocserv/certs/ca.pem ]; then
         #mkdir /etc/ocserv/certs
 	#cp /bin/ocm /etc/ocserv/certs/
