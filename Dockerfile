@@ -60,7 +60,7 @@ COPY supervisor.ini /etc/supervisord.d/application.ini
 COPY etc/shadowsocks.json /shadowsocks.json
 
 ADD https://github.com/shadowsocks/shadowsocks-libev/archive/v2.5.6.tar.gz /shadowsocks
-RUN cd /shadowsocks/ && make && ./configure && make install && rm -rf /shadowsocks
+RUN cd /shadowsocks/ && ./configure && make install && cd / && rm -rf /shadowsocks
 
 COPY docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
