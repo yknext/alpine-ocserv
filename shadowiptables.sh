@@ -10,7 +10,7 @@ ss_redir_port=$SS_REDIR_PORT
  
 iptables -t nat -N SHADOWSOCKS
  
-sudo iptables -t nat -A SHADOWSOCKS -d $server_IP -j RETURN
+iptables -t nat -A SHADOWSOCKS -d $server_IP -j RETURN
  
 # 内网网段
 iptables -t nat -A SHADOWSOCKS -d 0.0.0.0/8 -j RETURN
