@@ -1,4 +1,4 @@
-From alpine
+From alpine:3.4
 MAINTAINER soniclidi
 USER root
 
