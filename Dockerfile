@@ -53,6 +53,8 @@ WORKDIR /etc/ocserv
 COPY ocm /bin
 RUN chmod +x /bin/ocm
 
+COPY dnsmasq.conf /etc/dnsmasq.conf
+
 ADD https://github.com/shadowsocks/shadowsocks-libev/archive/v2.5.6.tar.gz /shadowsocks
 RUN cd /shadowsocks/ && make && ./configure && make install && rm -rf /shadowsocks
 
