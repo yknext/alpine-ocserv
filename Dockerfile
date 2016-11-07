@@ -59,6 +59,7 @@ COPY supervisor.ini /etc/supervisord.d/application.ini
 
 COPY etc/shadowsocks.json /shadowsocks.json
 COPY shadowiptables.sh /shadowiptables.sh
+RUN chmod +x /shadowiptables.sh
 
 RUN mkdir /shadowsocks
 ADD https://github.com/shadowsocks/shadowsocks-libev/archive/v2.5.6.tar.gz /shadowsocks
