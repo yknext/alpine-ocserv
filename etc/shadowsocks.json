@@ -1,0 +1,1 @@
+{"server":"VPS_SERVER_IP","server_port":VPS_SS_PORT,"local_port":SS_REDIR_PORT,"local_addr":"0.0.0.0","password":"VPS_SS_PASSWORD","timeout":600,"method":"VPS_SS_METHOD"}
