@@ -58,12 +58,6 @@ COPY dnsmasq.conf /etc/dnsmasq.conf
 COPY supervisor.ini /etc/supervisord.d/application.ini
 
 COPY etc/shadowsocks.json /etc/shadowsocks.json
-RUN sed -i 's/VPS_SERVER_IP/$VPS_SERVER_IP/' /etc/shadowsocks.json \
-    && sed -i 's/VPS_SERVER_IP/$VPS_SERVER_IP/' /etc/shadowsocks.json \
-    && sed -i 's/VPS_SS_PORT/$VPS_SS_PORT/' /etc/shadowsocks.json \
-    && sed -i 's/VPS_SS_PASSWORD/$VPS_SS_PASSWORD/' /etc/shadowsocks.json \
-    && sed -i 's/VPS_SS_METHOD/$VPS_SS_METHOD/' /etc/shadowsocks.json \
-    && sed -i 's/SS_REDIR_PORT/$SS_REDIR_PORT/' /etc/shadowsocks.json 
 
 ADD https://github.com/shadowsocks/shadowsocks-libev/archive/v2.5.6.tar.gz /shadowsocks
 RUN cd /shadowsocks/ && make && ./configure && make install && rm -rf /shadowsocks
