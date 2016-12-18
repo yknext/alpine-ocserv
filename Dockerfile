@@ -9,8 +9,7 @@ RUN buildDeps="xz openssl gcc autoconf make linux-headers"; \
 	set -x \
 	&& apk add $buildDeps \
 	&& cd \
-	&& wget http://www.infradead.org/ocserv/download.html -O download.html \
-	&& OC_VERSION=`sed -n 's/^.*version is <b>\(.*\)$/\1/p' download.html` \
+	&& OC_VERSION='ocserv-0.11.5.tar' \
 	&& OC_FILE="ocserv-$OC_VERSION" \
 	&& rm -fr download.html \
 	&& wget ftp://ftp.infradead.org/pub/ocserv/ocserv-0.11.5.tar.xz \
